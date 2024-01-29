@@ -42,7 +42,6 @@ abstract class WidgetEntryVisualizer<T : WidgetEntry<T>>(protected val eventProv
                 R.dimen.entry_bottom_padding
             )
         }
-        RemoteViewsUtil.setBackgroundColor(rv, R.id.event_entry, settings.colors().getEntryBackgroundColor(entry))
         return rv
     }
 
@@ -65,13 +64,6 @@ abstract class WidgetEntryVisualizer<T : WidgetEntry<T>>(protected val eventProv
         val viewId = R.id.event_entry_title
         rv.setTextViewText(viewId, getTitleString(entry))
         RemoteViewsUtil.setTextSize(settings, rv, viewId, R.dimen.event_entry_title)
-        RemoteViewsUtil.setTextColor(
-            settings,
-            TextColorPref.forTitle(entry),
-            rv,
-            viewId,
-            R.attr.eventEntryTitle
-        )
         RemoteViewsUtil.setMultiline(rv, viewId, settings.isMultilineTitle)
         if (settings.isMultilineTitle) {
             RemoteViewsUtil.setMaxLines(rv, viewId, settings.maxLinesTitle)
@@ -101,13 +93,6 @@ abstract class WidgetEntryVisualizer<T : WidgetEntry<T>>(protected val eventProv
             rv.setViewVisibility(viewId, View.VISIBLE)
             rv.setTextViewText(viewId, eventDetails)
             RemoteViewsUtil.setTextSize(settings, rv, viewId, R.dimen.event_entry_details)
-            RemoteViewsUtil.setTextColor(
-                settings,
-                TextColorPref.forDetails(entry),
-                rv,
-                viewId,
-                R.attr.dayHeaderTitle
-            )
             RemoteViewsUtil.setMultiline(rv, viewId, settings.isMultilineDetails)
             if (settings.isMultilineDetails) {
                 RemoteViewsUtil.setMaxLines(rv, viewId, settings.maxLinesDetails)
@@ -140,13 +125,6 @@ abstract class WidgetEntryVisualizer<T : WidgetEntry<T>>(protected val eventProv
                 if (daysAsText) R.dimen.days_to_event_width else R.dimen.days_to_event_right_width
             )
             RemoteViewsUtil.setTextSize(settings, rv, viewToShow, R.dimen.event_entry_details)
-            RemoteViewsUtil.setTextColor(
-                settings,
-                TextColorPref.forDetails(entry),
-                rv,
-                viewToShow,
-                R.attr.dayHeaderTitle
-            )
         }
     }
 
@@ -157,13 +135,6 @@ abstract class WidgetEntryVisualizer<T : WidgetEntry<T>>(protected val eventProv
         rv.setTextViewText(viewId, entry.eventTimeString.replace(CalendarEntry.SPACE_DASH_SPACE, "\n"))
         RemoteViewsUtil.setViewWidth(settings, rv, viewId, R.dimen.event_time_width)
         RemoteViewsUtil.setTextSize(settings, rv, viewId, R.dimen.event_entry_details)
-        RemoteViewsUtil.setTextColor(
-            settings,
-            TextColorPref.forDetails(entry),
-            rv,
-            viewId,
-            R.attr.dayHeaderTitle
-        )
     }
 
     fun isFor(entry: WidgetEntry<*>): Boolean {

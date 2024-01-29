@@ -42,7 +42,6 @@ class LastEntryVisualizer(context: Context, widgetId: Int) :
             viewId,
             R.attr.eventEntryTitle
         )
-        RemoteViewsUtil.setBackgroundColor(rv, viewId, settings.colors().getEntryBackgroundColor(entry))
         return rv
     }
 

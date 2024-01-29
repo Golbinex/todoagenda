@@ -315,10 +315,6 @@ class RemoteViewsFactory(val context: Context, private val widgetId: Int, create
                     settings.widgetHeaderLayout.widgetLayout?.shadowed(settings.textShadow) ?: 0
                 )
                 rv.addView(R.id.header_parent, headerView)
-                RemoteViewsUtil.setBackgroundColor(
-                    rv, R.id.action_bar,
-                    settings.colors().getBackgroundColor(BackgroundColorPref.WIDGET_HEADER)
-                )
                 configureCurrentDate(settings, rv)
                 setActionIcons(settings, rv)
                 configureGotoToday(settings, rv)
@@ -337,7 +333,6 @@ class RemoteViewsFactory(val context: Context, private val widgetId: Int, create
                 .uppercase(Locale.getDefault())
             rv.setTextViewText(viewId, if (StringUtil.isEmpty(formattedDate)) "                    " else formattedDate)
             RemoteViewsUtil.setTextSize(settings, rv, viewId, R.dimen.widget_header_title)
-            RemoteViewsUtil.setTextColor(settings, TextColorPref.WIDGET_HEADER, rv, viewId, R.attr.header)
         }
 
         private fun setActionIcons(settings: InstanceSettings, rv: RemoteViews) {

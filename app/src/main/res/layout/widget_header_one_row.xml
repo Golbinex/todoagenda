@@ -4,6 +4,7 @@
     android:id="@+id/action_bar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@android:color/system_accent3_800"
     android:gravity="center_vertical">
 
     <TextView
@@ -11,6 +12,7 @@
         style="@style/HeaderCurrentDate"
         android:layout_width="0dp"
         android:paddingTop="4dp"
+        android:textColor="@android:color/system_accent3_100"
         tools:text="@string/today"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
