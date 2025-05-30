@@ -4,6 +4,7 @@
     android:id="@+id/action_bar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@android:color/system_accent1_800"
     android:orientation="vertical"
     android:gravity="center_vertical">
 
@@ -12,6 +13,7 @@
         style="@style/HeaderCurrentDate"
         android:layout_width="wrap_content"
         android:paddingTop="4dp"
+        android:textColor="@android:color/system_accent1_100"
         tools:text="@string/today"
         android:layout_height="wrap_content" />
 

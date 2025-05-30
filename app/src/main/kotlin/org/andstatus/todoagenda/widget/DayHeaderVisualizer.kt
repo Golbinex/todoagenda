@@ -42,7 +42,6 @@ class DayHeaderVisualizer(
         rv.setInt(R.id.day_header_title_wrapper, "setGravity", alignment.gravity)
         val textColorPref: TextColorPref = TextColorPref.forDayHeader(entry)
         val themeContext = settings.colors().getThemeContext(textColorPref)
-        RemoteViewsUtil.setBackgroundColor(rv, R.id.event_entry, settings.colors().getEntryBackgroundColor(entry))
         RemoteViewsUtil.setCompact(settings, rv)
         setTitle(position, entry, rv, textColorPref)
         setDayHeaderSeparator(position, rv, themeContext)
@@ -58,7 +57,6 @@ class DayHeaderVisualizer(
         val dateString = getTitleString(entry).toString().uppercase(MyLocale.locale)
         rv.setTextViewText(R.id.day_header_title, dateString)
         RemoteViewsUtil.setTextSize(settings, rv, R.id.day_header_title, R.dimen.day_header_title)
-        RemoteViewsUtil.setTextColor(settings, textColorPref, rv, R.id.day_header_title, R.attr.dayHeaderTitle)
         if (settings.isCompactLayout) {
             RemoteViewsUtil.setPadding(
                 settings,

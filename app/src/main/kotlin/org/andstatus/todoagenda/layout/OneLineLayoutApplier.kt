@@ -52,13 +52,6 @@ class OneLineLayoutApplier(
                 if (daysAsText) R.dimen.days_to_event_width else R.dimen.days_to_event_right_width,
             )
             RemoteViewsUtil.setTextSize(settings, rv, viewToShow, R.dimen.event_entry_details)
-            RemoteViewsUtil.setTextColor(
-                settings,
-                TextColorPref.forDetails(entry),
-                rv,
-                viewToShow,
-                R.attr.dayHeaderTitle,
-            )
         }
     }
 
@@ -76,12 +69,5 @@ class OneLineLayoutApplier(
             RemoteViewsUtil.setViewMinWidth(settings, rv, viewId, R.dimen.event_time_width)
         }
         RemoteViewsUtil.setTextSize(settings, rv, viewId, R.dimen.event_entry_details)
-        RemoteViewsUtil.setTextColor(
-            settings,
-            TextColorPref.forDetails(entry),
-            rv,
-            viewId,
-            R.attr.dayHeaderTitle,
-        )
     }
 }

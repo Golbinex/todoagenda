@@ -50,9 +50,9 @@ abstract class EventEntryLayoutApplier(
             rv.setTextViewText(viewId, strTime)
             RemoteViewsUtil.setTextSize(settings, rv, viewId, R.dimen.event_entry_title)
             val textColorPref = TextColorPref.forTitle(entry)
-            settings.timeUntilBackgroundSource.textColor?.let { color ->
-                rv.setTextColor(viewId, color)
-            } ?: RemoteViewsUtil.setTextColor(settings, textColorPref, rv, viewId, R.attr.eventEntryTitle)
+            /*settings.timeUntilBackgroundSource.textColor?.let { color ->
+                //rv.setTextColor(viewId, color)
+            } ?: RemoteViewsUtil.setTextColor(settings, textColorPref, rv, viewId, R.attr.eventEntryTitle)*/
             val timeUntilBackgroundSource = settings.timeUntilBackgroundSource(textColorPref)
             timeUntilBackgroundSource.drawableResId?.let { resId ->
                 RemoteViewsUtil.setBackgroundResource(rv, viewId, resId)
@@ -70,13 +70,6 @@ abstract class EventEntryLayoutApplier(
         val viewId = R.id.event_entry_title
         rv.setTextViewText(viewId, getTitleString(entry))
         RemoteViewsUtil.setTextSize(settings, rv, viewId, R.dimen.event_entry_title)
-        RemoteViewsUtil.setTextColor(
-            settings,
-            TextColorPref.forTitle(entry),
-            rv,
-            viewId,
-            R.attr.eventEntryTitle,
-        )
         RemoteViewsUtil.setMultiline(rv, viewId, settings.isMultilineTitle)
         if (settings.isMultilineTitle) {
             RemoteViewsUtil.setMaxLines(rv, viewId, settings.maxLinesTitle)
@@ -112,7 +105,6 @@ abstract class EventEntryLayoutApplier(
         rv: RemoteViews,
         entry: WidgetEntry,
     ) {
-        RemoteViewsUtil.setBackgroundColor(rv, R.id.event_entry, settings.colors().getEntryBackgroundColor(entry))
     }
 
     fun dayXY(entry: WidgetEntry): String? =

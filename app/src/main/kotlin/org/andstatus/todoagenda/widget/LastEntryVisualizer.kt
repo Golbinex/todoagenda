@@ -31,7 +31,6 @@ class LastEntryVisualizer(
         }
         RemoteViewsUtil.setTextSize(settings, rv, viewId, R.dimen.event_entry_title)
         RemoteViewsUtil.setTextColor(settings, TextColorPref.forTitle(entry), rv, viewId, R.attr.eventEntryTitle)
-        RemoteViewsUtil.setBackgroundColor(rv, viewId, settings.colors().getEntryBackgroundColor(entry))
         return rv
     }
 

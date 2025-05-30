@@ -4,6 +4,7 @@
     android:id="@+id/event_entry"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@android:color/system_accent1_800"
     android:paddingLeft="@dimen/calender_padding"
     android:paddingRight="@dimen/calender_padding">
 
@@ -42,6 +43,7 @@
                 android:paddingStart="@dimen/time_until_horizontal_padding"
                 android:paddingEnd="@dimen/time_until_horizontal_padding"
                 tools:background="@drawable/time_until_black"
+                android:textColor="@android:color/system_accent1_100"
                 tools:text="in 00:45" />
 
             <RelativeLayout
@@ -59,6 +61,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_toStartOf="@+id/event_entry_indicator_layout_ref"
                     android:gravity="center_vertical"
+                    android:textColor="@android:color/system_accent1_100"
                     tools:ignore="SelectableText"
                     tools:text="Event Entry Title. It may be long and not fit in one line" />
 
@@ -80,6 +83,7 @@
             android:layout_height="wrap_content"
             tools:ignore="SelectableText"
             tools:singleLine="false"
+            android:textColor="@android:color/system_accent1_100"
             tools:text="Event Entry Details, which could be quite long and span more than one line" />
     </LinearLayout>
 </LinearLayout>

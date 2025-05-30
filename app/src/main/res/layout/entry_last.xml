@@ -6,5 +6,6 @@
     android:gravity="center"
     android:padding="@dimen/calender_padding"
     android:text=" "
+    android:background="@android:color/system_accent1_800">
     android:textAppearance="?android:attr/textAppearanceMedium">
 </TextView>

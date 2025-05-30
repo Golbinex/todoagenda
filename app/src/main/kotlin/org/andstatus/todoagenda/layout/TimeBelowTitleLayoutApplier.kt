@@ -35,13 +35,6 @@ class TimeBelowTitleLayoutApplier(
             rv.setViewVisibility(viewId, View.VISIBLE)
             rv.setTextViewText(viewId, eventDetails)
             RemoteViewsUtil.setTextSize(settings, rv, viewId, R.dimen.event_entry_details)
-            RemoteViewsUtil.setTextColor(
-                settings,
-                TextColorPref.forDetails(entry),
-                rv,
-                viewId,
-                R.attr.dayHeaderTitle,
-            )
             RemoteViewsUtil.setMultiline(rv, viewId, settings.isMultilineDetails)
             if (settings.isMultilineDetails) {
                 RemoteViewsUtil.setMaxLines(rv, viewId, settings.maxLinesDetails)
